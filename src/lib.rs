@@ -19,7 +19,7 @@ type Kilogram<T> = Si<T, 0, 0, 1, 0, 0, 0, 0>;
 impl<T, const S: isize, const MET: isize, const KG: isize, const A: isize, const K: isize, const MOL: isize, const CD: isize>
     Si<T, { S }, { MET }, { KG }, { A }, { K }, { MOL }, { CD }>
 {
-    fn kg(a: T) -> Kilogram<T> {
+    pub fn kg(a: T) -> Kilogram<T> {
         Si(a)
     }
 }
