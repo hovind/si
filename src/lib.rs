@@ -5,10 +5,7 @@ mod tests {
     use super::*;
     #[test]
     fn it_works() {
-        /*let x : Kilogram<f64> = Si::kg(1.0);
-        let y = Si::kg(2.0f64);
-        assert_eq!(x + x, y);*/
-        assert!(true);
+        assert_eq!(Si::kg(1) + Si::kg(1), Si::kg(2));
     }
 }
 
