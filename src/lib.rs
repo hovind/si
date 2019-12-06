@@ -30,6 +30,15 @@ pub type Mole<T>     = Si<T, 0, 0, 0, 0, 0, 1, 0>;
 pub type Candela<T>  = Si<T, 0, 0, 0, 0, 0, 0, 1>;
 pub type Newton<T>   = Si<T, -2, 1, 1, 0, 0, 0, 0>;
 
+/* Because
+ * ```
+ * pub fn kg(a: T) -> Kilogram<T> {
+ *      Si(a)
+ * }
+ * ```
+ * causes "cannot infer type for `fn(i64) -> Si<i64, 0, 0, 1, 0, 0, 0, 0> {Si::<i64, _: isize, _: isize, _: isize, _: isize, _: isize, _: isize, _: isize>::kg}`".
+ * Hopefully compiler people will fix this.
+ */
 macro_rules! implement {
     ( $type:ident, $name:ident ) => {
         #[macro_export]
