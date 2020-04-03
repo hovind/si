@@ -116,7 +116,7 @@ where
     type Output = Si<T, { S1 + S2 }, { MET1 + MET2 }, { KG1 + KG2 }, { A1 + A2 }, { K1 + K2 }, { MOL1 + MOL2 }, { CD1 + CD2 }>;
 
     fn mul(self, rhs: Si<T, { S2 }, { MET2 }, { KG2 }, { A2 }, { K2 }, { MOL2 }, { CD2 }>) -> Self::Output {
-        Self(self.0.mul(rhs.0))
+        Si(self.0.mul(rhs.0))
     }
 }
 
@@ -131,6 +131,6 @@ where
     type Output = Si<T, { S1 - S2 }, { MET1 - MET2 }, { KG1 - KG2 }, { A1 - A2 }, { K1 - K2 }, { MOL1 - MOL2 }, { CD1 - CD2 }>;
 
     fn div(self, rhs: Si<T, { S2 }, { MET2 }, { KG2 }, { A2 }, { K2 }, { MOL2 }, { CD2 }>) -> Self::Output {
-        Self(self.0.div(rhs.0))
+        Si(self.0.div(rhs.0))
     }
 }
